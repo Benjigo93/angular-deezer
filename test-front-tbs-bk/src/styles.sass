@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+html, body
+  font-family: 'Roboto'
+
+/* COLOR */
+$grass: #3E9709
+$grass-light: #7EB95B
+$fire: #FC0C0B
+$fire-light: #FD5D5C
+$water: #0A7ABC
+$water-light: #5BA6D2
+$gray-light: #d8d8d8
+$gray-dark: #606060
+$gray: #b6b6b6
+
+$transparent: transparent
+$black: #000000
+$white: #ffffff
+
+$general: ('black', $black), ('white', $white), ('grass', $grass), ('grass-light', $grass-light), ('fire', $fire), ('fire-light', $fire-light), ('water', $water), ('water-light', $water-light), ('gray', $gray)
+
+@each $color in $general
+  $name: nth($color, 1)
+  $value: nth($color,2)
+  .bg-color-#{$name}
+    background-color: $value !important
+    .color-#{$name}
+      color: $value !important
+
+@for $i from 0 through 100
+  .w-#{$i}
+    width: #{$i * 1%}
+
+    .h-#{$i}
+      height: #{$i * 1%}

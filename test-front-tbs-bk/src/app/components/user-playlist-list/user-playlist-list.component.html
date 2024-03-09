@@ -1,0 +1,45 @@
+<div class="container px-4 py-2 md:px-6 lg:px-8">
+  <p-toolbar styleClass="bg-gray-900 shadow-2"
+    [style]="{ 'border-radius': '3rem', 'background-image': 'linear-gradient(to right, var(--indigo-100), var(--indigo-800))' }">
+    <ng-template pTemplate="start">
+      <p-image src="/assets/images/deezer-logo.svg" alt="logo" width="40"></p-image>
+    </ng-template>
+    <ng-template pTemplate="center">
+      <div class="flex flex-wrap align-items-center gap-3">
+        <h1 class="font-bold text-black-100">Deezer Playlists</h1>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="end">
+      <div class="flex align-items-center gap-2">
+        <p-avatar label="{{userName.charAt(0)}}" size="large" shape="circle" />
+        <span class="font-bold text-bluegray-50">{{userName}}</span>
+      </div>
+    </ng-template>
+  </p-toolbar>
+
+  <p-dialog [(visible)]="modalVisible" [modal]="true" [style]="{ width: '80vw' }" [draggable]="false" 
+  [resizable]="false">
+    <app-user-playlist-detail [playlist]="activePlaylist" class="m-0"></app-user-playlist-detail>
+  </p-dialog>
+
+  <div class="grid playlist__list py-4">
+    <div class="col-12 md:col-6 lg:col-4 xl:col-4" *ngFor="let playlist of userPlaylists" (click)="onDetail(playlist)">
+      <p-card header="{{playlist.title}}" class="cursor-pointer">
+        <ng-template pTemplate="header">
+          <p-image src="{{playlist.picture_big}}" alt="cover"></p-image>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+
+  <ul class="list-none grid px-0 py-4" *ngIf="isLoading">
+    <li class="col-12 md:col-6 lg:col-4 xl:col-4" *ngFor="let i of [0,1,2,3,4,5,6,7,8]">
+      <p-card class="mb-5">
+        <p-skeleton width="100%" styleClass="mb-2"></p-skeleton>
+        <p-skeleton width="75%" styleClass="mb-2"></p-skeleton>
+        <p-skeleton width="100%" styleClass="mb-2"></p-skeleton>
+        <p-skeleton width="75%"></p-skeleton>
+      </p-card>
+    </li>
+  </ul>
+</div>

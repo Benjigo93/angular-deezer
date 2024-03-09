@@ -1,0 +1,72 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/proxy-back/dist
+/proxy-back/tmp
+/proxy-back/out-tsc
+/proxy-back/bazel-out
+/test-front-tbs-bk/dist
+/test-front-tbs-bk/tmp
+/test-front-tbs-bk/out-tsc
+/test-front-tbs-bk/bazel-out
+
+
+# Node
+/proxy-back/node_modules
+/proxy-back/npm-debug.log
+/proxy-back/yarn-error.log
+/test-front-tbs-bk/node_modules
+/test-front-tbs-bk/npm-debug.log
+/test-front-tbs-bk/yarn-error.log
+
+# IDEs and editors
+/proxy-back/.idea/
+/proxy-back/.project
+/proxy-back/.classpath
+/proxy-back/.c9/
+/proxy-back/*.launch
+/proxy-back/.settings/
+/proxy-back/*.sublime-workspace
+/test-front-tbs-bk/.idea/
+/test-front-tbs-bk/.project
+/test-front-tbs-bk/.classpath
+/test-front-tbs-bk/.c9/
+/test-front-tbs-bk/*.launch
+/test-front-tbs-bk/.settings/
+/test-front-tbs-bk/*.sublime-workspace
+
+# Visual Studio Code
+/proxy-back/.vscode/*
+/proxy-back/!.vscode/settings.json
+/proxy-back/!.vscode/tasks.json
+/proxy-back/!.vscode/launch.json
+/proxy-back/!.vscode/extensions.json
+/proxy-back/.history/*
+/test-front-tbs-bk/.vscode/*
+/test-front-tbs-bk/!.vscode/settings.json
+/test-front-tbs-bk/!.vscode/tasks.json
+/test-front-tbs-bk/!.vscode/launch.json
+/test-front-tbs-bk/!.vscode/extensions.json
+/test-front-tbs-bk/.history/*
+
+# Miscellaneous
+/proxy-back/.angular/cache
+/proxy-back/.sass-cache/
+/proxy-back/connect.lock
+/proxy-back/coverage
+/proxy-back/libpeerconnection.log
+/proxy-back/testem.log
+/proxy-back/typings
+/.angular/cache
+/test-front-tbs-bk/.sass-cache/
+/test-front-tbs-bk/connect.lock
+/test-front-tbs-bk/coverage
+/test-front-tbs-bk/libpeerconnection.log
+/test-front-tbs-bk/testem.log
+/test-front-tbs-bk/typings
+
+# System files
+/proxy-back/.DS_Store
+/proxy-back/Thumbs.db
+/test-front-tbs-bk/.DS_Store
+/test-front-tbs-bk/Thumbs.db

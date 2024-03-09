@@ -1,0 +1,52 @@
+<div> 
+  <p-toolbar *ngIf="playlist">
+    <div class="p-toolbar-group-start">
+      <p-image src="{{playlist.picture_medium}}" width="100" alt="cover"></p-image>
+    </div>
+    <div class="p-toolbar-group-center">
+      <h1 class="font-bold text-black-100">{{playlist.title}}</h1>
+    </div>
+    <div class="p-toolbar-group-end">
+      <div class="flex flex-column align-items-start lg:align-items-end">
+        <h3>Created by {{playlist.creator.name}}</h3>
+        <span>Duration: {{formatDuration(playlist.duration)}}</span>
+      </div>
+    </div>
+  </p-toolbar>
+  <p-table [columns]="cols" [value]="playlist.tracks" [scrollable]="true" scrollHeight="350px" [rows]="25"
+    [virtualScroll]="true" [virtualScrollItemSize]="50" [lazy]="true" (onLazyLoad)="loadTracksLazy($event)"
+    *ngIf="playlist && playlist.tracks && playlist.tracks.length > 0">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns" style="width: 20%;">
+          {{col.header}}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr style="height:50px">
+        <td *ngFor="let col of columns">
+          <span *ngIf="col.field === 'album'">
+            <p-image src="{{rowData[col.field].cover_medium}}" width="40" alt="cover"></p-image>
+          </span>
+          <span *ngIf="col.field === 'title_short'">
+            {{rowData[col.field]}}
+          </span>
+          <span *ngIf="col.field === 'artist'">
+            {{rowData[col.field].name}}
+          </span>
+          <span *ngIf="col.field === 'duration'">
+            {{formatDuration(rowData[col.field])}}
+          </span>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="loadingbody" let-columns="columns">
+      <tr style="height:50px">
+        <td *ngFor="let col of columns; let even = even">
+          <p-skeleton [ngStyle]="{'width': even ? '25%' : '60%'}"></p-skeleton>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
