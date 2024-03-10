@@ -10,4 +10,4 @@ It's a mini proxy developed with node.js (Express.js) to avoid CORS issues durin
 
 ## Main Angular Project
 
-This folder contains a mini project develop with Angular which list the playlists of a specific user.
+This folder contains a mini project developed with Angular which list the playlists of a specific user.

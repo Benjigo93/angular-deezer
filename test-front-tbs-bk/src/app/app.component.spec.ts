@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'test-front-tbs-bk'`, () => {
+  it(`should have as title 'Test Front TBS BK'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('test-front-tbs-bk');
+    expect(app.title).toEqual('Test Front TBS BK');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, test-front-tbs-bk');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Deezer Playlists');
   });
 });
