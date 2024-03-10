@@ -70,3 +70,5 @@
 /proxy-back/Thumbs.db
 /test-front-tbs-bk/.DS_Store
 /test-front-tbs-bk/Thumbs.db
+# Local Netlify folder
+.netlify

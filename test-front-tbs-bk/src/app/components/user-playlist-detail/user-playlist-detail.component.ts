@@ -66,7 +66,7 @@ export class UserPlaylistDetailComponent {
     return new Date(duration * 1000).toISOString().substring(11, 19)
   }
 
-  loadTracksLazy(event: LazyLoadEvent): void{
+  loadTracksLazy(): void{
     this.getTracks(this.index)
   }
 

@@ -14,7 +14,7 @@
     </div>
   </p-toolbar>
   <p-table [columns]="cols" [value]="playlist.tracks" [scrollable]="true" scrollHeight="350px" [rows]="25"
-    [virtualScroll]="true" [virtualScrollItemSize]="50" [lazy]="true" (onLazyLoad)="loadTracksLazy($event)"
+    [virtualScroll]="true" [virtualScrollItemSize]="50" [lazy]="true" (onLazyLoad)="loadTracksLazy()"
     *ngIf="playlist && playlist.tracks && playlist.tracks.length > 0">
     <ng-template pTemplate="header" let-columns>
       <tr>
