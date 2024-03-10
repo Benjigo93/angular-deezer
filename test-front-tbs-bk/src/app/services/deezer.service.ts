@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 import { PlaylistList } from '../models/playlist.list';
 import { PlaylistDetail } from '../models/playlist.detail';
 import { Track } from '../models/track';
@@ -9,8 +10,7 @@ import { Track } from '../models/track';
 
 @Injectable({providedIn: 'root'})
 export class DeezerService {
-  private baseUrl = 'https://api.deezer.com/';
-  // private baseUrl = 'http://localhost:5000/';
+  private baseUrl = environment.apiURL;
 
   constructor(private http: HttpClient) {}
 
